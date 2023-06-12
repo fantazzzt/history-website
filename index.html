@@ -40,8 +40,14 @@
         <h2>AND HERE</h2>
         <p>AND ALSO HERE</p>
       </div>
-      <div class="main__img--container">
-        <img src="images/pic1.svg" alt="pic" id="main__img">
+
+      <img src="images/pic1.svg" usemap="#map" style="border: 2px solid black;">
+      <map name="map">
+        <area shape="rect" coords="300,250,550,550" alt="Region 1" onclick="showInformation('Region 1', event)">
+        <!-- Add more <area> elements for other regions -->
+      </map>
+      <div id="information"></div>
+        
       </div>
     </div>
   </div>
