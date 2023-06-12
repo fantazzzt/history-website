@@ -41,7 +41,7 @@
   align-items: center;
   cursor: pointer;
   text-decoration: none;
-  font-size: 2rem;
+  font-size: 3rem;
 }
 
 .fa-gem{
@@ -214,9 +214,6 @@
   max-width: 1300px;
   padding: 0 50px;
 }
-img#main__img {
-  border: 5px solid #555;
-}
 
 .main__content h1 {
   font-size: 4rem;
@@ -235,3 +232,18 @@ img#main__img {
   font-weight: 700;
 }
 
+#information {
+  display: none;
+  position: absolute;
+  background-color: #f2f2f2;
+  border: 1px solid #ccc;
+  padding: 10px;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  color: #333;
+  z-index: 9999;
+  max-width: 300px;
+  pointer-events: none;
+  left: 10px; /* Adjust the left position as needed */
+  top: 10px; /* Adjust the top position as needed */
+}
