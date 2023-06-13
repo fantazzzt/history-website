@@ -35,18 +35,25 @@
   <!-- Hero Section -->
   <div class="main">
     <div class="main__container">
-      <div class="main__content">
+      <div class="main__content" onclick="showInformation('REMOVE', event)">
         <h1>FILL HERE</h1>
         <h2>AND HERE</h2>
         <p>AND ALSO HERE</p>
       </div>
-
-      <img src="images/pic1.svg" usemap="#map" style="border: 2px solid black;">
+      <div class="image-container">
+       <img id="image" src="images/pic1.svg" usemap="#map" style="border: 2px solid black;">
+      <div class="overlay"></div>
       <map name="map">
-        <area shape="rect" coords="300,250,550,550" alt="Region 1" onclick="showInformation('Region 1', event)">
+        <area shape="rect" coords="290,290,345,335" alt="Region 1" onclick="showInformation('Adrianople', event)">
+        <!-- The coordinates above me are incorrect, too high. Also need to implement pattern matching for each region -->
         <!-- Add more <area> elements for other regions -->
       </map>
+      <div style="text-align: center;">
+        <p>Click on the shaded regions for historical events!</p>
+      </div>
+      </div>
       <div id="information"></div>
+      
         
       </div>
     </div>
