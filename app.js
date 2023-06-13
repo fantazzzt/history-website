@@ -24,8 +24,11 @@ window.addEventListener("scroll", () => {
 
 
 /* Interactable Map */
+
+let flag = true; // Declare flag as a global variable
+
 function showInformation(region, event) {
-  var information = "Roman Empire and more info...."; // Replace this with the information you want to display for each region
+  var information = "Battle of Adrianople 378, Where Emperor Valens suffered a disastrous defeat at the hands of the Goths.";
   var informationBox = document.getElementById("information");
   informationBox.innerHTML = information;
 
@@ -35,9 +38,16 @@ function showInformation(region, event) {
   informationBox.style.left = left;
   informationBox.style.top = top;
 
-  // Show the information box
-  informationBox.style.display = "block"; // Or use "inline-block" or another appropriate value
+  // Show or hide the information box
+  if (flag & region !== "REMOVE") {
+    flag = false;
+    informationBox.style.display = "block"; // Or use "inline-block" or another appropriate value
+  } else {
+    informationBox.style.display = "none";
+    flag = true;
+  }
 }
+
 
 
 /*Debug*/
