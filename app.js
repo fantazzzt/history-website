@@ -25,29 +25,47 @@ window.addEventListener("scroll", () => {
 
 /* Interactable Map */
 
-let flag = true; // Declare flag as a global variable
+// let flag = true; // Declare flag as a global variable
 
-function showInformation(region, event) {
-  var information = "Battle of Adrianople 378, Where Emperor Valens suffered a disastrous defeat at the hands of the Goths.";
-  var informationBox = document.getElementById("information");
-  informationBox.innerHTML = information;
+// function showInformation(region, event) {
+//   let information = ''
+//   if (region == "Adrianople"){
+//     information = "Battle of Adrianople 378, Where Emperor Valens suffered a disastrous defeat at the hands of the Goths.";
+// } else if (region =="Chalons"){
+//     information = "Battle of Chalons 451 CE, Where the Roman and Foederati faces off against a confederation of Huns.";
+// }
+//   var informationBox = document.getElementById("information");
+//   informationBox.innerHTML = information;
 
-  // Position the information box near the click event coordinates
-  var left = event.clientX + 10 + "px"; // Adjust the horizontal position as needed
-  var top = event.clientY + 10 + "px"; // Adjust the vertical position as needed
-  informationBox.style.left = left;
-  informationBox.style.top = top;
+//   // Position the information box near the click event coordinates
+//   var left = event.clientX + 10 + "px";
+//   var top = event.clientY + 10 + "px"; 
+//   informationBox.style.left = left;
+//   informationBox.style.top = top;
 
-  // Show or hide the information box
-  if (flag & region !== "REMOVE") {
-    flag = false;
-    informationBox.style.display = "block"; // Or use "inline-block" or another appropriate value
-  } else {
-    informationBox.style.display = "none";
-    flag = true;
-  }
-}
+//   // Show or hide the information box
+//   if (flag & region !== "REMOVE") {
+//     flag = false;
+//     informationBox.style.display = "block"; // Or use "inline-block" or another appropriate value
+//   } else {
+//     informationBox.style.display = "none";
+//     flag = true;
+//   }
+// }
 
+
+document.addEventListener("DOMContentLoaded", function() {
+  var overlay1 = document.querySelector(".overlayAdrian");
+  var overlay2 = document.querySelector(".overlayChalons");
+  var textBox = document.getElementById("textBox");
+
+  overlay1.addEventListener("click", function() {
+    textBox.value = "Battle of Adrianople 378, Where Emperor Valens suffered a disastrous defeat at the hands of the Goths.";
+  });
+  overlay2.addEventListener("click", function() {
+    textBox.value = "Battle of Chalons 451 CE, Where the Roman and Foederati faces off against a confederation of Huns.";
+  });
+});
 
 
 /*Debug*/
