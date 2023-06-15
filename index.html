@@ -36,15 +36,19 @@
   <div class="main">
     <div class="main__container">
       <div class="main__content" onclick="showInformation('REMOVE', event)">
-        <h1>FILL HERE</h1>
-        <h2>AND HERE</h2>
-        <p>AND ALSO HERE</p>
+        <h1>Understanding Antiquity</h1>
+        <p>Spanning 284-750 CE</p>
       </div>
       <div class="image-container">
+      <div style="text-align: center; font-size: 1.7em; font-weight: bold;">
+        <p>Europe after the Fall of the Western Roman Empire, 476</p> 
        <img id="image" src="images/pic1.svg" usemap="#map" style="border: 2px solid black;">
-      <div class="overlay"></div>
+      <div class="overlayAdrian"></div>
+      <textarea id="textBox" placeholder="Click the overlay"></textarea>
+      <div class="overlayChalons"></div>
       <map name="map">
-        <area shape="rect" coords="290,290,345,335" alt="Region 1" onclick="showInformation('Adrianople', event)">
+        <!-- <area shape="rect" coords="290,290,345,335" alt="Region 1" onclick="showInformation('Adrianople', event)">
+        <area shape="rect" coords="115,252,142,290" alt="Region 2" onclick="showInformation('Chalons', event)"> -->
         <!-- The coordinates above me are incorrect, too high. Also need to implement pattern matching for each region -->
         <!-- Add more <area> elements for other regions -->
       </map>
@@ -53,11 +57,44 @@
       </div>
       </div>
       <div id="information"></div>
-      
-        
       </div>
     </div>
   </div>
+  <!--Intro Section -->
+  <div class="centered-container">
+    <p> It wasn't more than half a century when the history surrounding the Late Roman Empire was transformed by Peter Brown. His academic work rexammined the discussion surrounding this period, notably the seminole work 'The History of the Decline and Fall of the Roman Empire' by Edward Gibbon. Rather than the previous idea of massive barbarian hordes tearing apart the empire with the destructive power of Christianity, Peter Brown finds powerful transformations undertaking the Roman Empire that aren't exactly sudden or as harsh as previously led on to be. Additionally, these transformations do not have 'good' or 'bad' connotations, but are rather different expressions in certain areas, such as art, religious work, and buildings.</p>
+    <p>As such, the period of Late Antiquity, a period of transitions between the old classical history and the early medieval era, is roughly defined between the start of Diocletions reign and ends with the Arab invasions of the Sassian and Byzantine Empires. Notably, this includes the Fall of the Western Roman Empire in 476 CE, signaling an idea of continuity carrying over through before and after the fall. Additionally, these "barbarians" have been rexammined as being strong political entities that carry a variety of ethnic and cultural backgrounds, rather than one homogeneous unit.</p>
+    <p>With this website, I hope to showcase some of these developments in the historical field and dispell previous notions of how to understand the Roman Empire. </p>
+  </div>
+
+  <!-- Footer Section -->
+  <div class="footer__container">
+    <div class="footer__links">
+      <div class="footer__links--wrapper">
+        <div class="footer__link--items">
+          <h2>About</h2>
+          <a href="/">Who am I?</a>
+          <a href="/">Why make this?</a>
+        </div>
+        </div>
+      <div class="footer__links--wrapper">
+        <div class="footer__link--items">
+          <h2>Contact</h2>
+          <a href="/">Contact</a>
+        </div>
+      </div>
+      <div class="footer__links--wrapper">
+        <div class="footer__link--items">
+          <h2>Learn More</h2>
+          <a href="/">More Information</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
   <script src="app.js"></script>
 </body>
 </html>
