@@ -3,6 +3,7 @@
   margin: 0;
   padding: 0;
   font-family: 'Kumbh Sans', sans-serif;
+  background-color: #C4A484;
 }
 
 .navbar {
@@ -20,6 +21,7 @@
 
 .navbar__container {
   display: flex;
+  background: #131313;
   justify-content: space-between;
   height: 80px;
   z-index: 1;
@@ -30,8 +32,8 @@
 }
 
 #navbar__logo {
-  background-color: #ff8177;
-  background-image: linear-gradient(to top, #ff0844 0%, #ffb199 100%);
+  background: #131313;
+  background-image: linear-gradient(to top, #f77062 50%, #000000 100%);
   background-size: 100%;
   -webkit-background-clip: text;
   -moz-background-clip: text;
@@ -46,9 +48,11 @@
 
 .fa-gem{
   margin-right: 0.5rem;
+  
 }
 
 .navbar__menu{
+  background: #131313;
   display: flex;
   align-items: center;
   list-style: none;
@@ -60,6 +64,7 @@
 }
 
 .navbar__links {
+  background: #131313;
   color: #ffff;
   display: flex;
   align-items: center;
@@ -70,6 +75,7 @@
 }
 
 .navbar__btn {
+  background: #131313;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -78,6 +84,7 @@
 }
 
 .button {
+  background: #131313;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -92,7 +99,7 @@
   color: #fff;
 }
 
-.button:hover {
+.button:hover { 
   background-color: #4837ff;
   transition: all 0.3s ease;
 }
@@ -111,6 +118,7 @@
     width: 100%;
     max-width: 1300px;
     padding: 0;
+    
   }
   .navbar__menu{
     display: grid;
@@ -137,6 +145,7 @@
   }
   #navbar__logo {
     padding-left: 25px;
+    
   }
   .navbar__toggle .bar{
     width: 25px;
@@ -147,6 +156,7 @@
   }
 
   .navbar__item {
+    
     width: 100%;
   }
   .navbar__links{
@@ -216,34 +226,131 @@
 }
 
 .main__content h1 {
-  font-size: 4rem;
-  background-color: #ff8177;
+  font-size: 5rem;
+  background-color: #131313;
   background-image: linear-gradient(to top, #ff0844, #ffb199, 100%);
   background-size: 100%;
   -webkit-background-clip: text;
   -moz-background-clip: text;
   -webkit-text-fill-color: transparent;
   -moz-text-fill-color: transparent
+  
 }
 
-.main_content p {
-  margin-top: 1rem;
-  font-size: 2rem;
-  font-weight: 700;
+.main__content p {
+  font-size: 37px; /* Adjust the value as needed */
 }
 
-#information {
-  display: none;
+
+.image-container {
+  position: relative;
+  display: inline-block; /* or any other desired display value */
+}
+
+.overlayAdrian {
   position: absolute;
-  background-color: #f2f2f2;
-  border: 1px solid #ccc;
+  top: 63%;
+  left: 61%;
+  width: 5%;
+  height: 5%;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black overlay */
+  z-index: 9999; /* Ensure the overlay is on top of other elements */
+  cursor: pointer; /* Show pointer cursor when hovering over the overlay */
+}
+
+#textBox {
+  display: block;
+  margin-top: 20px;
   padding: 10px;
-  font-family: Arial, sans-serif;
-  font-size: 14px;
-  color: #333;
-  z-index: 9999;
-  max-width: 300px;
-  pointer-events: none;
-  left: 10px; /* Adjust the left position as needed */
-  top: 10px; /* Adjust the top position as needed */
+  width: 370px;
+  resize: none; /* Disable manual resizing */
+  overflow-y: hidden; /* Hide vertical scrollbar */
+  margin: 0 auto;
+}
+
+.overlayChalons {
+  position: absolute;
+  top: 57%; /* Adjust the top position */
+  left: 24%; /* Adjust the left position */
+  width: 5%; /* Adjust the width */
+  height: 5%; /* Adjust the height */
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black overlay */
+  z-index: 9999; /* Ensure the overlay is on top of other elements */
+  cursor: pointer; /* Show pointer cursor when hovering over the overlay */
+}
+
+
+
+/*Intro Style */
+
+.centered-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: auto; 
+  margin-left: 230px;
+  margin-right: 230px;
+  font-size: 2rem;
+}
+.centered-container p {
+  margin-top: 10px; /* Adjust the value as needed */
+}
+
+
+
+
+
+
+
+/*Footer Section Style */
+
+.footer__container {
+  background-color: #C4A484;
+  padding: 5rem 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer__links {
+  width: 100%;
+  max-width: 1000px;
+  display: flex;
+  justify-content: center;
+}
+
+.footer__link--wrapper {
+  display: flex;
+}
+
+.footer__link--items{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: 16px;
+  text-align: left;
+  width: 160px;
+  box-sizing: border-box;
+}
+
+.footer__link--items h2 {
+  margin-bottom: 16px;
+}
+
+.footer__link--items > h2 {
+  color: #fff;
+
+}
+
+.footer__links--items a {
+  color: #fff;
+  text-decoration: none;
+  margin-bottom: 0.5rem;
+}
+
+.footer__link--items a:hover {
+  color: #e9e9e9;
+  transition: 0.3s ease-out;
 }
