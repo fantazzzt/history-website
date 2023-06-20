@@ -109,6 +109,38 @@
   transition: all 0.3s ease;
 }
 
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  grid-template-columns: auto;
+  overflow: auto; 
+}
+.navbar__item:hover .dropdown-menu {
+
+  display: block;
+}
+
+.dropdown-menu li {
+  background-color: black; /* Background color for dropdown menu items */
+  padding: 5px;
+}
+
+.dropdown-menu li a {
+  display: block;
+  background-color: transparent; /* Set the background color of the text to transparent */
+  color: white; /* Text color for dropdown menu items */
+  text-decoration: none;
+}
+
+.dropdown-menu li:hover {
+  background-color: gray; /* Background color on hover */
+}
+
+
+
+
+
+
 @media screen and (max-width: 960px) {
   .navbar__container{
     display: flex;
@@ -132,6 +164,7 @@
     height: 50vh;
     z-index: -1;
     background: #131313;
+    background-color: transparent;
   }
   .navbar__menu.active {
     background: #131313;
@@ -146,13 +179,16 @@
   #navbar__logo {
     padding-left: 25px;
     
+    
   }
   .navbar__toggle .bar{
     width: 25px;
     height: 3px;
     margin: 5px auto;
     transition: all 0.3s ease-in-out;
-    background: #fff;
+    background: white;
+
+    
   }
 
   .navbar__item {
@@ -170,6 +206,7 @@
     top: 20%;
     right: 5%;
     transform: translate(5%,20%);
+    background: #131313;
   }
 
   .navbar__btn{
@@ -198,6 +235,9 @@
   }
   #mobile-menu.is-active .bar:nth-child(3) {
     transform: translateY(-8px) rotate(-45deg);
+  }
+  .navbar__item:hover .dropdown-menu {
+    display: none; /* Hide the dropdown menu on hover for mobile devices */
   }
 }
 
@@ -253,9 +293,9 @@
   left: 61%;
   width: 5%;
   height: 5%;
-  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black overlay */
-  z-index: 9999; /* Ensure the overlay is on top of other elements */
-  cursor: pointer; /* Show pointer cursor when hovering over the overlay */
+  background-color: rgba(0, 0, 0, 0.5); 
+  z-index: 90; 
+  cursor: pointer;
 }
 
 #textBox {
@@ -270,13 +310,13 @@
 
 .overlayChalons {
   position: absolute;
-  top: 57%; /* Adjust the top position */
-  left: 24%; /* Adjust the left position */
-  width: 5%; /* Adjust the width */
-  height: 5%; /* Adjust the height */
-  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black overlay */
-  z-index: 9999; /* Ensure the overlay is on top of other elements */
-  cursor: pointer; /* Show pointer cursor when hovering over the overlay */
+  top: 57%; 
+  left: 24%; 
+  width: 5%; 
+  height: 5%; 
+  background-color: rgba(0, 0, 0, 0.5); 
+  z-index: 90; 
+  cursor: pointer; 
 }
 
 
@@ -288,10 +328,9 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: auto; 
   margin-left: 230px;
   margin-right: 230px;
-  font-size: 2rem;
+  font-size: 36px;
 }
 .centered-container p {
   margin-top: 10px; /* Adjust the value as needed */
