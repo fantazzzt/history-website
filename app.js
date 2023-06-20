@@ -23,35 +23,24 @@ window.addEventListener("scroll", () => {
 });
 
 
+
+function showDropdown() {
+  var dropdown = document.getElementById("realmDropdown");
+  if (star.classList.contains('is-active')) {
+    
+  } 
+  else{
+  dropdown.style.display = "block";
+  }
+}
+
+function hideDropdown() {
+  var dropdown = document.getElementById("realmDropdown");
+  dropdown.style.display = "none";
+}
+
+
 /* Interactable Map */
-
-// let flag = true; // Declare flag as a global variable
-
-// function showInformation(region, event) {
-//   let information = ''
-//   if (region == "Adrianople"){
-//     information = "Battle of Adrianople 378, Where Emperor Valens suffered a disastrous defeat at the hands of the Goths.";
-// } else if (region =="Chalons"){
-//     information = "Battle of Chalons 451 CE, Where the Roman and Foederati faces off against a confederation of Huns.";
-// }
-//   var informationBox = document.getElementById("information");
-//   informationBox.innerHTML = information;
-
-//   // Position the information box near the click event coordinates
-//   var left = event.clientX + 10 + "px";
-//   var top = event.clientY + 10 + "px"; 
-//   informationBox.style.left = left;
-//   informationBox.style.top = top;
-
-//   // Show or hide the information box
-//   if (flag & region !== "REMOVE") {
-//     flag = false;
-//     informationBox.style.display = "block"; // Or use "inline-block" or another appropriate value
-//   } else {
-//     informationBox.style.display = "none";
-//     flag = true;
-//   }
-// }
 
 
 document.addEventListener("DOMContentLoaded", function() {
