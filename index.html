@@ -10,30 +10,39 @@
 <body>
   <nav class="navbar">
     <div class="navbar__container">
-      <a href="/" id="navbar__logo">LATE ANTIQUITY</a>
-      <div class="navbar__toggle" id="mobile-menu">
+      <a href="/historyweb/index.html" id="navbar__logo">LATE ANTIQUITY</a>
+      <div class="navbar__toggle" id="mobile-menu" onmouseover="hideDropdown()">
         <span class="bar"></span>
         <span class="bar"></span>
         <span class="bar"></span>
       </div>
-      <ul class="navbar__menu">
+      <ul class="navbar__menu" >
         <li class="navbar__item">
-          <a href="/" class="navbar__links"> Home </a>
+          <a href="/historyweb/index.html" class="navbar__links" onmouseover="hideDropdown()"> Home </a>
         </li>
         <li class="navbar__item">
-          <a href="/economy.html" class="navbar__links"> Economy </a>
+          <a href="/historyweb/economy.html" class="navbar__links" onmouseover="hideDropdown()"> Economy </a>
         </li>
         <li class="navbar__item">
-          <a href="/" class="navbar__links"> Realms </a>
+          <a href="/" class="navbar__links" onmouseover="showDropdown()"> Realms </a>
+          <ul class="dropdown-menu" id="realmDropdown">
+            <li><a href="#">Roman Empire</a></li>
+            <li><a href="#">Sasanids</a></li>
+            <li><a href="#">Goths</a></li>
+          </ul>
+
         </li>
         <li class="navbar__btn">
-          <a href="/" class="button"> Extra </a>
+          <a href="/" class="button" onmouseover="hideDropdown()"> About </a>
         </li>
       </ul>
     </div>
   </nav>
+
+
+  
   <!-- Hero Section -->
-  <div class="main">
+  <div class="main" onmouseover="hideDropdown()">
     <div class="main__container">
       <div class="main__content" onclick="showInformation('REMOVE', event)">
         <h1>Understanding Antiquity</h1>
@@ -73,20 +82,19 @@
       <div class="footer__links--wrapper">
         <div class="footer__link--items">
           <h2>About</h2>
-          <a href="/">Who am I?</a>
-          <a href="/">Why make this?</a>
+          <a href="https://www.linkedin.com/in/caden-massey-3a10a8276/">Who am I?</a>
         </div>
         </div>
       <div class="footer__links--wrapper">
         <div class="footer__link--items">
           <h2>Contact</h2>
-          <a href="/">Contact</a>
+          <a href="mailto:caden4331@gmail.com">Contact </a>
         </div>
       </div>
       <div class="footer__links--wrapper">
         <div class="footer__link--items">
           <h2>Learn More</h2>
-          <a href="/">More Information</a>
+          <a href="https://www.amazon.com/Empires-Barbarians-Fall-Birth-Europe/dp/0199892261">More Information</a>
         </div>
       </div>
     </div>
