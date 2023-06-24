@@ -249,6 +249,7 @@
 /* Hero Section CSS */
 
 .main {
+  margin-bottom: 200px;
   background-color: #C4A484 ;
 }
  .main__container {
@@ -256,7 +257,9 @@
   grid-template-columns: 1fr 1fr;
   align-items: center;
   justify-self: center;
-  margin: 0 auto;
+  margin-left:auto;
+  margin-right:auto;
+  flex-direction: column;
   height: 90vh;
   background-color: #C4A484; 
   z-index: 1;
@@ -278,13 +281,23 @@
 }
 
 .main__content p {
-  font-size: 37px; /* Adjust the value as needed */
+  font-size: 37px; 
 }
 
 
 .image-container {
   position: relative;
-  display: inline-block; /* or any other desired display value */
+  display: inline-block; 
+}
+
+
+.text_container {
+  margin-top: 1%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  grid-column: 1 / -1; 
 }
 
 .overlayAdrian {
@@ -324,16 +337,18 @@
 /*Intro Style */
 
 .centered-container {
-  display: flex;
-  flex-direction: column;
+  position: inherit;
   align-items: center;
-  justify-content: center;
-  margin-left: 230px;
-  margin-right: 230px;
-  font-size: 36px;
+  justify-self: center;
+  margin: 0 auto;
+  width: 75%;
+  padding: 0 50px;
+  font-size: 2em;
+
 }
 .centered-container p {
-  margin-top: 10px; /* Adjust the value as needed */
+  margin-top: 1%;
+  background-size: 100%;
 }
 
 
