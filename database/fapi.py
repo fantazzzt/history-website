@@ -1,5 +1,6 @@
 from fastapi import FastAPI
 import sqlite3
+from graph import generate_histogram
 
 app = FastAPI()
 
@@ -23,3 +24,9 @@ def get_coin(coin_id: int):
     }
     
     return coin_info
+
+@app.get("/generate_histogram")
+def generate_histogram_route():
+    sample_size = 100 
+    generate_histogram(sample_size)
+    return "Histogram generated successfully!"
