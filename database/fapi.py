@@ -1,32 +1,49 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, Request
+from fastapi.staticfiles import StaticFiles
+from fastapi.templating import Jinja2Templates
+import matplotlib.pyplot as plt
+from io import BytesIO
 import sqlite3
-from graph import generate_histogram
+import requests
 
 app = FastAPI()
+templates = Jinja2Templates(directory="templates")
 
-@app.get("/coin/{coin_id}")
-def get_coin(coin_id: int):
-    conn = sqlite3.connect('coin.db')
-    cursor = conn.cursor()
-    cursor.execute("SELECT cgID, cg_num_coins, cg_mint, cg_start_year, Location_ID FROM coin_table WHERE cgID = ?", (coin_id,))
-    result = cursor.fetchone()
-    conn.close()
-    
-    if result is None:
-        return {"error": "Coin not found"}
 
-    coin_info = {
-        "cgID": result[0],
-        "cg_num_coins": result[1],
-        "cg_mint": result[2],
-        "cg_start_year": result[3],
-        "Location_ID": result[4],
-    }
-    
-    return coin_info
+@app.get("/")
+def index(request: Request):
+    return templates.TemplateResponse("economy.html", {"request": request})
 
 @app.get("/generate_histogram")
 def generate_histogram_route():
-    sample_size = 100 
-    generate_histogram(sample_size)
+    sample_size = 100
+    coin_mints = get_random_coin_sample(sample_size)
+
+    plt.hist(coin_mints, bins=10)
+    plt.xlabel("cg_mint")
+    plt.ylabel("Frequency")
+    plt.title("Histogram of cg_mint")
+
+    plt.savefig("static/histogram.png")
+    plt.close()
+
     return "Histogram generated successfully!"
+
+def get_random_coin_sample(sample_size):
+    response = requests.get(f"http://localhost:8000/coin?sample_size={sample_size}")
+    data = response.json()
+    coin_mints = []
+    for coin in data:
+        if coin.get("cg_mint"):
+            coin_mints.append(coin["cg_mint"])
+    return coin_mints
+
+
+def generate_histogram(sample_size):
+    coin_mints = get_random_coin_sample(sample_size)
+
+    plt.hist(coin_mints, bins=10)
+    plt.xlabel("cg_mint")
+    plt.ylabel("Frequency")
+    plt.title("Histogram of cg_mint")
+    plt.show()
