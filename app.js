@@ -56,6 +56,17 @@ document.addEventListener("DOMContentLoaded", function() {
   });
 });
 
+/*Test if ping */
+fetch('http://localhost:5000/')
+  .then(response => response.json())
+  .then(data => {
+    console.log(data);
+    const jsonStr = JSON.stringify(data, null, 2);
+    document.getElementById('json-container').textContent = jsonStr;
+  })
+  .catch(error => console.error('Error:', error));
+
+
 
 /*Debug*/
 var svgImage = document.querySelector('img[src="images/pic1.svg"]');
