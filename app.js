@@ -56,17 +56,65 @@ document.addEventListener("DOMContentLoaded", function() {
   });
 });
 
-/*Test if ping */
+/*Create a histogram */
+// fetch('http://localhost:5000/')
+//   .then(response => response.json())
+//   .then(data => {
+//     console.log(data);
+//     const jsonStr = JSON.stringify(data, null, 2);
+//     document.getElementById('json-container').textContent = jsonStr;
+//   })
+//   .catch(error => console.error('Error:', error));
+
+var canvas = document.getElementById('histogram');
+
 fetch('http://localhost:5000/')
   .then(response => response.json())
   .then(data => {
-    console.log(data);
-    const jsonStr = JSON.stringify(data, null, 2);
-    document.getElementById('json-container').textContent = jsonStr;
-  })
-  .catch(error => console.error('Error:', error));
 
+    var coinMints = data.map(item => item[0]);
 
+    var coinCounts = coinMints.reduce(function (counts, coin) {
+      counts[coin] = (counts[coin] || 0) + 1;
+      return counts;
+    }, {});
+
+    var labels = Object.keys(coinCounts);
+    var counts = Object.values(coinCounts);
+
+    new Chart(canvas, {
+      type: 'bar',
+      data: {
+        labels: labels,
+        datasets: [{
+          label: 'Coin Mints',
+          data: counts,
+          backgroundColor: 'rgba(75, 192, 192, 0.2)',
+          borderColor: 'rgba(75, 192, 192, 1)',
+          borderWidth: 1
+        }]
+      },
+      options: {
+        responsive: true,
+        scales: {
+          x: {
+            display: true,
+            title: {
+              display: true,
+              text: 'Coin Mints'
+            }
+          },
+          y: {
+            display: true,
+            title: {
+              display: true,
+              text: 'Frequency'
+            }
+          }
+        }
+      }
+    });
+  });
 
 /*Debug*/
 var svgImage = document.querySelector('img[src="images/pic1.svg"]');
