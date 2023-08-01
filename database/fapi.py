@@ -17,9 +17,9 @@ def search_by_year():
     coins = get_coins_by_year(year)
     return jsonify(coins)
 
-@app.route('/coin/<int:coin_number>', methods=['GET'])
-def get_coin_details(coin_number):
-    coin = get_coin_by_number(coin_number)
+@app.route('/coin/<int:coin_id>', methods=['GET'])
+def get_coin_details(coin_id):
+    coin = get_coin_by_id(coin_id)
     return jsonify(coin)
 
 @app.route('/mint', methods=['GET'])
@@ -41,16 +41,16 @@ def get_random_coin_sample(sample_size):
 def get_coins_by_year(year):
     conn = sqlite3.connect('C:/Users/masse/aoe2stuff/historyweb/database/coin.db', check_same_thread=False)
     cursor = conn.cursor()
-    query = f"SELECT * FROM Coingroups WHERE year_made = {year}"
+    query = f"SELECT * FROM Coingroups WHERE cg_start_year <= {year} AND cg_end_year >= {year}"
     cursor.execute(query)
     coins = cursor.fetchall()
     conn.close()
     return coins
 
-def get_coin_by_number(coin_number):
+def get_coin_by_id(coin_id):
     conn = sqlite3.connect('C:/Users/masse/aoe2stuff/historyweb/database/coin.db', check_same_thread=False)
     cursor = conn.cursor()
-    query = f"SELECT * FROM Coingroups WHERE coin_number = {coin_number}"
+    query = f"SELECT * FROM Coingroups WHERE cgID = {coin_id}"
     cursor.execute(query)
     coin = cursor.fetchone()
     conn.close()
