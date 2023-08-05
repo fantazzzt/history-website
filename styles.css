@@ -249,9 +249,10 @@
 /* Hero Section CSS */
 
 .main {
-  margin-bottom: 200px;
   background-color: #C4A484 ;
+  margin-bottom: 50px
 }
+
  .main__container {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -266,9 +267,12 @@
   width: 100%;
   max-width: 1300px;
   padding: 0 50px;
+  
+  
 }
 
 .main__content h1 {
+  
   font-size: 5rem;
   background-color: #131313;
   background-image: linear-gradient(to top, #ff0844, #ffb199, 100%);
@@ -281,6 +285,7 @@
 }
 
 .main__content p {
+  
   font-size: 37px; 
 }
 
@@ -292,13 +297,22 @@
 
 
 .text_container {
+  
   margin-top: 1%;
-  display: flex;
+  position: inherit;
   justify-content: center;
   align-items: center;
   height: 100%;
-  grid-column: 1 / -1; 
+  grid-column: 1 / -1;
+  flex-direction: column; 
+  margin: 0 auto;
+  width: 100%;
+  
 }
+.text_container p {
+  margin-bottom: 1.1rem; /* adjust the value as needed */
+}
+
 
 .overlayAdrian {
   position: absolute;
@@ -333,33 +347,42 @@
 }
 
 
-
 /*Intro Style */
 
 .centered-container {
-  position: inherit;
-  align-items: center;
-  justify-self: center;
-  margin: 0 auto;
-  width: 75%;
-  padding: 0 50px;
-  font-size: 2em;
+  margin: 0 auto ;
+  width: 65%;
+  padding: 0 ;
+  font-size: 2.3em;
 
 }
 .centered-container p {
   margin-top: 1%;
   background-size: 100%;
+  margin-bottom: 40px; 
+}
+
+
+.image-container {
+  float: left;
+  margin-right: 20px; 
+
+}
+
+
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
 }
 
 
 
 
-
-
-
-/*Footer Section Style */
+/*Footer Section Style Index*/
 
 .footer__container {
+  margin-top: 30%;
   background-color: #C4A484;
   padding: 5rem 0;
   display: flex;
