@@ -116,6 +116,49 @@ fetch('http://localhost:5000/')
     });
   });
 
+
+
+async function displaySampleCoins() {
+  try {
+    const coins = await getData('/coins');
+    const coinList = document.getElementById('coinList');
+    coins.forEach(coin => {
+      const listItem = document.createElement('li');
+      listItem.textContent = coin.cg_mint; 
+      coinList.appendChild(listItem);
+    });
+  } catch (error) {
+    console.error('Error fetching sample coins:', error);
+  }
+}
+
+
+// Fetch a specific coin by its ID and display its details
+async function displayCoinDetails(coinId) {
+  try {
+    const coin = await getData(`/coins/${coinId}`);
+    const coinDetails = document.getElementById('coinDetails');
+    coinDetails.textContent = JSON.stringify(coin); 
+  } catch (error) {
+    console.error(`Error fetching details for coin ${coinId}:`, error);
+  }
+}
+
+async function searchCoins(params) {
+  try {
+    const url = new URL('/coins/search', window.location.origin);
+    Object.keys(params).forEach(key => url.searchParams.append(key, params[key]));
+    const coins = await getData(url);
+    const searchResults = document.getElementById('searchResults');
+    coins.forEach(coin => {
+      const listItem = document.createElement('li');
+      listItem.textContent = coin.cg_mint;
+      searchResults.appendChild(listItem);
+    });
+  } catch (error) {
+    console.error('Error fetching search results:', error);
+  }
+}
 /*Debug*/
 var svgImage = document.querySelector('img[src="images/pic1.svg"]');
 var width = svgImage.naturalWidth;
